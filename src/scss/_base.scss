@@ -1,0 +1,26 @@
+// COLORS
+$color-primary: hsl(220, 98%, 61%);
+$color-bg-gradient: linear-gradient(
+  to right,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
+
+// LIGHT THEME
+$color-text-l-1: hsl(235, 19%, 35%);
+$color-text-l-2: hsl(236, 9%, 61%);
+$color-text-l-3: hsl(233, 11%, 84%);
+$color-bg-l: hsl(236, 33%, 92%);
+$color-text-l-4: hsl(0, 0%, 98%);
+
+// DARK THEME
+$color-text-d-5: hsl(237, 14%, 26%);
+$color-text-d-2: hsl(233, 14%, 35%);
+$color-text-complete-d: hsl(234, 11%, 52%);
+$color-text-d-bg: hsl(235, 24%, 19%);
+$color-box-d-shadow: hsl(235, 21%, 11%);
+$color-text-d-1: hsl(234, 39%, 85%);
+$color-text-d-1-hover: hsl(236, 33%, 92%);
+
+// FONT
+$font-display: "Josefin Sans", sans-serif;

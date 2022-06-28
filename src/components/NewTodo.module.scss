@@ -1,0 +1,29 @@
+@import "../scss/base";
+
+.input_container {
+  display: flex;
+  padding: 1rem 2rem;
+  align-items: center;
+  border: 1px solid #ccc;
+
+  & div {
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid #ccc;
+    margin-right: 1rem;
+  }
+
+  & form {
+    & input {
+      outline: none;
+      border: none;
+      caret-color: blue;
+
+      &::placeholder {
+        font-style: italic;
+        color: $color-text-l-3;
+      }
+    }
+  }
+}
