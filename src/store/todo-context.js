@@ -13,11 +13,12 @@ const TodoContext = React.createContext({
 });
 
 export const TodoContextProvider = (props) => {
-  const [todos, setTodos] = useState([]);
+  const storedTodos = JSON.parse(localStorage.getItem("todos"));
+
+  const [todos, setTodos] = useState(storedTodos || []);
   const [todoListState, setTodoListState] = useState("all");
 
   const setItemChecked = (id) => {
-    console.log(id);
     let newTodo, updatedTodos;
     const existingTodoIndex = todos.findIndex((item) => item.id === id);
     const existingTodo = todos[existingTodoIndex];
