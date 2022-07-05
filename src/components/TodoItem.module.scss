@@ -1,11 +1,8 @@
 @import "../scss/base";
 
-li {
+.cover {
   display: flex;
   align-items: center;
-  padding: 1rem 2rem;
-  margin-top: 2rem;
-  border: 1px solid #ccc;
 }
 
 .round {
@@ -68,11 +65,20 @@ li {
 }
 
 .timesIcon {
-  margin-left: auto;
+  margin-left: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
 }
 
 .text-line-through {
   text-decoration: line-through;
+}
+
+.logos {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 // // form:hover,

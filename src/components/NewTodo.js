@@ -15,6 +15,9 @@ const NewTodo = () => {
       text: enteredText,
       checked: false,
     };
+    if (enteredText === "") {
+      return;
+    }
     todoCtx.addTodo(todo);
     inputRef.current.value = "";
   };
