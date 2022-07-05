@@ -5,7 +5,6 @@ import classes from "./TodoList.module.scss";
 import TodoContext from "../store/todo-context";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
-
 const TodoList = () => {
   const {
     allTodos,
@@ -16,7 +15,7 @@ const TodoList = () => {
     clearCompleted,
     dragHandle,
   } = useContext(TodoContext);
-  let listItems;
+  let listItems, items;
 
   if (listState === "all") {
     console.log(allTodos);
@@ -85,6 +84,13 @@ const TodoList = () => {
       ));
   }
 
+  items =
+    listState === "completed"
+      ? allTodos.slice().filter((item) => item.checked === true)
+      : allTodos.slice().filter((item) => item.checked !== true);
+
+  console.log(items);
+
   const addActiveHandler = () => {
     addToActiveTodo();
   };
@@ -130,6 +136,7 @@ const TodoList = () => {
 
         <p onClick={addCompleteHandler}>completed</p>
         <p onClick={removeCompletedHandler}>clear completed</p>
+        <p>{items.length} items left</p>
       </div>
     </>
   );

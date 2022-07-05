@@ -42,6 +42,18 @@ export const TodoContextProvider = (props) => {
     setTodos(updatedTodos);
   };
 
+  const editTodo = ({ id, text }) => {
+    let newTodo, updatedTodos;
+    const existingTodoIndex = todos.findIndex((item) => item.id === id);
+    const existingTodo = todos[existingTodoIndex];
+    if (existingTodo && !existingTodo.checked) {
+      newTodo = { ...existingTodo, text: text };
+    }
+    updatedTodos = [...todos];
+    updatedTodos[existingTodoIndex] = newTodo;
+    setTodos(updatedTodos);
+  };
+
   const displayActiveTodos = () => {
     setTodoListState("active");
   };
@@ -76,6 +88,7 @@ export const TodoContextProvider = (props) => {
     listState: todoListState,
     displayAll,
     clearCompleted,
+    editTodo,
     dragHandle: onDragHandle,
   };
   return (
