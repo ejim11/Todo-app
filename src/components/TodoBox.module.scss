@@ -59,6 +59,10 @@
     display: flex;
     flex-direction: column;
     box-shadow: 1px 1px 25px 5px rgba($color: #000000, $alpha: 0.2);
+
+    @include respond(phone) {
+      height: 40rem;
+    }
   }
 }
 
