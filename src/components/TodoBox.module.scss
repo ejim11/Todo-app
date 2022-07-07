@@ -33,7 +33,7 @@
     margin-bottom: 2rem;
 
     & h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #fff;
     }
 
@@ -43,6 +43,11 @@
       width: 1.6rem;
       fill: #fff;
       cursor: pointer;
+
+      @include respond(tablet) {
+        height: 2rem;
+        width: 2rem;
+      }
     }
   }
 

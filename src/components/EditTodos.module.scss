@@ -1,4 +1,5 @@
 @import "../scss/base";
+@import "../scss/mixin";
 
 .input_container {
   display: flex;
@@ -24,6 +25,10 @@
       padding: 0.5rem 1rem;
       background-color: inherit;
       color: currentColor;
+
+      @include respond(tablet){
+        font-size: 16px !important;
+      }
 
       &::placeholder {
         font-style: italic;

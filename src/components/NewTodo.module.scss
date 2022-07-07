@@ -1,4 +1,5 @@
 @import "../scss/base";
+@import "../scss/mixin";
 
 .input_container {
   display: flex;
@@ -25,6 +26,9 @@
       width: 100%;
       background-color: inherit;
       color: currentColor;
+      @include respond(tablet) {
+        font-size: 16px !important;
+      }
 
       &:focus {
         outline-offset: 0;
