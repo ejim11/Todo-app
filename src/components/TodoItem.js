@@ -46,7 +46,13 @@ const TodoItem = (props) => {
             htmlFor={props.id}
             className={`${classes.name} ${
               checked && classes["text-line-through"]
-            } ${todoCtx.lightModeState ? classes.light : classes.dark}`}
+            } ${todoCtx.lightModeState ? classes.light : classes.dark} ${
+              checked
+                ? todoCtx.lightModeState
+                  ? classes.lightC
+                  : classes.darkC
+                : null
+            }`}
           >
             {props.todoItem}
           </label>
