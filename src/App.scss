@@ -1,4 +1,5 @@
 @import "./scss/base.scss";
+@import "./scss/mixin";
 /* General reset code */
 
 *::before,
@@ -11,9 +12,34 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 87.5%; /* 1rem = 14px */
+
+  @include respond(bigLaptop) {
+    font-size: 75%; /* 1rem = 12px */
+  }
+
+  @include respond(laptop) {
+    font-size: 62.5%; /* 1rem = 10px */
+  }
+
+  @include respond(tablet) {
+    font-size: 50%; /* 1rem = 8px */
+  }
 }
 
 body {
   font-family: $font-display;
+}
+
+.light {
+  background-color: $color-bg-l;
+}
+
+.dark {
+  background-color: $color-box-d-shadow;
+}
+
+.app {
+  min-height: 100vh;
+  padding-bottom: 5rem;
 }

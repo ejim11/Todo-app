@@ -4,7 +4,7 @@
   display: flex;
   padding: 1rem 2rem;
   align-items: center;
-  border: 1px solid #ccc;
+  border-radius: 0.5rem;
 
   & div {
     border-radius: 50%;
@@ -15,15 +15,42 @@
   }
 
   & form {
+    flex: 1;
+
     & input {
       outline: none;
       border: none;
       caret-color: blue;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      background-color: inherit;
+      color: currentColor;
+
+      &:focus {
+        outline-offset: 0;
+      }
 
       &::placeholder {
         font-style: italic;
-        color: $color-text-l-3;
       }
     }
   }
+}
+
+.light {
+  background-color: $color-text-l-4;
+  color: $color-text-d-bg;
+}
+
+.light input::placeholder {
+  color: rgba($color-text-d-2, 0.5);
+}
+
+.dark {
+  background-color: $color-text-d-bg;
+  color: $color-text-l-4;
+}
+
+.dark input::placeholder {
+  color: rgba($color-text-l-4, 0.5);
 }

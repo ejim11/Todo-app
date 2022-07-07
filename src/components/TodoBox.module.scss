@@ -1,0 +1,68 @@
+@import "../scss/base";
+@import "../scss/mixin";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0rem auto;
+  z-index: 2;
+  position: relative;
+  padding: 3rem 0rem 3rem;
+
+  @include respond(laptop) {
+    width: 60%;
+  }
+
+  @include respond(tablet) {
+    width: 70%;
+  }
+
+  @include respond(phone) {
+    width: 80%;
+  }
+
+  @include respond(sPhone) {
+    width: 85%;
+  }
+
+  &-header {
+    display: flex;
+    padding: 1rem 0;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    & h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    & .icon {
+      margin-left: auto;
+      height: 1.6rem;
+      width: 1.6rem;
+      fill: #fff;
+      cursor: pointer;
+    }
+  }
+
+  &-body__list {
+    border-radius: 0.5rem;
+    background-color: #fff;
+    margin-top: 2rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 25px 5px rgba($color: #000000, $alpha: 0.2);
+  }
+}
+
+.light {
+  background-color: $color-text-l-4;
+  color: $color-text-d-bg;
+}
+
+.dark {
+  background-color: $color-text-d-bg;
+  color: $color-text-l-3;
+}

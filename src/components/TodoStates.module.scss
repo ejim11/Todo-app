@@ -1,0 +1,51 @@
+@import "../scss/base";
+@import "../scss/mixin";
+
+.state_container {
+  display: flex;
+  font-size: 1.7rem;
+  align-items: center;
+  color: currentColor;
+  justify-content: center;
+  flex: 1;
+
+  & p {
+    cursor: pointer;
+    margin: 0 0.5rem;
+  }
+}
+
+.all,
+.active,
+.completed {
+  color: $color-primary;
+}
+
+.bigScreen {
+  @include respond(sPhone) {
+    display: none;
+  }
+}
+
+.smallScreen {
+  display: none;
+
+  @include respond(sPhone) {
+    display: flex;
+    width: 85%;
+    margin: 0rem auto 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 25px 5px rgba($color: #000000, $alpha: 0.2);
+  }
+}
+
+.light {
+  background-color: $color-text-l-4;
+  color: $color-text-d-bg;
+}
+
+.dark {
+  background-color: $color-text-d-bg;
+  color: $color-text-l-3;
+}

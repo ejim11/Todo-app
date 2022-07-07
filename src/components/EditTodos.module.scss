@@ -4,7 +4,6 @@
   display: flex;
   padding: 1rem 2rem;
   align-items: center;
-  border: 1px solid #ccc;
   margin-top: 1rem;
 
   & div {
@@ -16,15 +15,41 @@
   }
 
   & form {
+    flex: 1;
     & input {
       outline: none;
       border: none;
       caret-color: blue;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      background-color: inherit;
+      color: currentColor;
 
       &::placeholder {
         font-style: italic;
-        color: $color-text-l-3;
+      }
+
+      &:focus {
+        outline-offset: 0;
       }
     }
   }
+}
+
+.light {
+  background-color: $color-text-l-4;
+  color: $color-text-d-bg;
+}
+
+.light input::placeholder {
+  color: $color-text-d-2;
+}
+
+.dark {
+  background-color: $color-text-d-bg;
+  color: $color-text-l-4;
+}
+
+.dark input::placeholder {
+  color: rgba($color-text-l-4, 0.5);
 }

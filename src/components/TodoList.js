@@ -4,17 +4,12 @@ import { useContext } from "react";
 import classes from "./TodoList.module.scss";
 import TodoContext from "../store/todo-context";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import TodoStates from "./TodoStates";
+import TodoImg from "../UI/TodoImg";
 
 const TodoList = () => {
-  const {
-    allTodos,
-    listState,
-    addToActiveTodo,
-    addToCompleted,
-    displayAll,
-    clearCompleted,
-    dragHandle,
-  } = useContext(TodoContext);
+  const { allTodos, listState, clearCompleted, dragHandle } =
+    useContext(TodoContext);
   let listItems, items;
 
   if (listState === "all") {
@@ -91,18 +86,6 @@ const TodoList = () => {
 
   console.log(items);
 
-  const addActiveHandler = () => {
-    addToActiveTodo();
-  };
-
-  const addCompleteHandler = () => {
-    addToCompleted();
-  };
-
-  const addAllHandler = () => {
-    displayAll();
-  };
-
   const removeCompletedHandler = () => {
     clearCompleted();
   };
@@ -121,22 +104,23 @@ const TodoList = () => {
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
-              {listItems}
+              {listItems.length > 0 ? listItems : <TodoImg />}
               {provided.placeholder}
             </ul>
           )}
         </Droppable>
       </DragDropContext>
-      <div>
-        <p className={classes.p} onClick={addAllHandler}>
-          all
+      <div className={classes["state-container"]}>
+        <p className={classes.p}>
+          {items.length} {items.length > 1 ? "items" : "item"} left
         </p>
-
-        <p onClick={addActiveHandler}>active</p>
-
-        <p onClick={addCompleteHandler}>completed</p>
-        <p onClick={removeCompletedHandler}>clear completed</p>
-        <p>{items.length} items left</p>
+        <TodoStates className={"bigScreen"} />
+        <p
+          className={classes["state-container__clear-completed"]}
+          onClick={removeCompletedHandler}
+        >
+          clear completed
+        </p>
       </div>
     </>
   );

@@ -26,18 +26,7 @@ const TodoItem = (props) => {
   const editTodoHandler = () => {
     setShowEditInput((prevState) => !prevState);
   };
-  // let listItems
-  // if (todoCtx.listState === "active") {
-  //   listItems = todoCtx.allTodos
-  //     .slice()
-  //     .filter((item) => item.checked !== true)}
-
-  //     if (todoCtx.listState === "completed") {
-  //       listItems = todoCtx.allTodos
-  //         .slice()
-  //         .filter((item) => item.checked === true)}
-
-  // const listNumber = listItems.length
+  
 
   return (
     <Fragment>

@@ -5,7 +5,7 @@ import TodoContext from "../store/todo-context";
 
 const EditTodo = (props) => {
   const refInput = useRef();
-  const { editTodo } = useContext(TodoContext);
+  const { editTodo, lightModeState } = useContext(TodoContext);
 
   const submitTodoHandler = () => {
     const enteredText = refInput.current.value;
@@ -15,10 +15,19 @@ const EditTodo = (props) => {
   };
   return (
     <Fragment>
-      <div className={classes.input_container}>
+      <div
+        className={`${classes.input_container} ${
+          lightModeState ? classes.light : classes.dark
+        }`}
+      >
         <div></div>
         <form onSubmit={submitTodoHandler}>
-          <input ref={refInput} type="text" placeholder="Write Todo" />
+          <input
+            ref={refInput}
+            type="text"
+            placeholder="Edit Todo"
+            autoFocus={true}
+          />
         </form>
       </div>
     </Fragment>

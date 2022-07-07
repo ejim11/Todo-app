@@ -4,6 +4,7 @@ const TodoContext = React.createContext({
   allTodos: [],
   activeTodos: [],
   listState: "",
+  lightModeState: true,
   addToActiveTodo: () => {},
   addToCompleted: () => {},
   setItemChecked: () => {},
@@ -13,11 +14,12 @@ const TodoContext = React.createContext({
   clearCompleted: () => {},
   dragHandle: () => {},
   editTodo: () => {},
+  setMode: () => {},
 });
 
 export const TodoContextProvider = (props) => {
   const storedTodos = JSON.parse(localStorage.getItem("todos"));
-
+  const [lightMode, setLightMode] = useState(true);
   const [todos, setTodos] = useState(storedTodos || []);
   const [todoListState, setTodoListState] = useState("all");
 
@@ -67,7 +69,6 @@ export const TodoContextProvider = (props) => {
   };
 
   const onAddTodo = (todo) => {
-    console.log(todo);
     setTodos((prevState) => prevState.concat(todo));
   };
   const onRemoveTodo = (id) => {
@@ -76,6 +77,11 @@ export const TodoContextProvider = (props) => {
 
   const clearCompleted = () => {
     setTodos((prevState) => prevState.filter((todo) => todo.checked !== true));
+  };
+
+  const changeLightModeHandler = (mode) => {
+    localStorage.setItem("mode", mode);
+    setLightMode(mode);
   };
 
   const values = {
@@ -90,6 +96,8 @@ export const TodoContextProvider = (props) => {
     clearCompleted,
     editTodo,
     dragHandle: onDragHandle,
+    lightModeState: lightMode,
+    setMode: changeLightModeHandler,
   };
   return (
     <TodoContext.Provider value={values}>{props.children}</TodoContext.Provider>

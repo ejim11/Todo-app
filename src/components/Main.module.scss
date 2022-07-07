@@ -1,0 +1,37 @@
+@import "../scss/base";
+
+section {
+  position: relative;
+
+  & .bg-color {
+    position: absolute;
+    top: 0;
+    height: 20rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+  }
+
+  .bg-l-color {
+    background-image: url("../assets/bg-desktop-light.jpg");
+  }
+
+  .bg-d-color {
+    background-image: url("../assets/bg-desktop-dark.jpg");
+  }
+
+  & .drag_paragraph {
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 0rem auto;
+  }
+}
+
+.light {
+  color: $color-text-d-bg;
+}
+
+.dark {
+  color: $color-text-l-2;
+}
