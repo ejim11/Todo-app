@@ -46,17 +46,27 @@ const TodoItem = (props) => {
             htmlFor={props.id}
             className={`${classes.name} ${
               checked && classes["text-line-through"]
-            }`}
+            } ${todoCtx.lightModeState ? classes.light : classes.dark}`}
           >
             {props.todoItem}
           </label>
         </form>
         <div className={classes.logos}>
           {checked ? null : (
-            <FaEdit className={classes.timesIcon} onClick={editTodoHandler} />
+            <FaEdit
+              className={`${classes.timesIcon} ${
+                todoCtx.lightModeState ? classes.light : classes.dark
+              }`}
+              onClick={editTodoHandler}
+            />
           )}
 
-          <ImBin2 className={classes.timesIcon} onClick={removeTodoItem} />
+          <ImBin2
+            className={`${classes.timesIcon} ${
+              todoCtx.lightModeState ? classes.light : classes.dark
+            }`}
+            onClick={removeTodoItem}
+          />
         </div>
       </div>
       {checked ? null : showEditInput ? (

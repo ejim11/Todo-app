@@ -12,6 +12,9 @@
   & p {
     cursor: pointer;
     margin: 0 0.5rem;
+    &:hover {
+      color: rgba($color-primary, 0.5);
+    }
   }
 }
 

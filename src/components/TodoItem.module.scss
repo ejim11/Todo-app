@@ -93,19 +93,10 @@
   align-items: center;
 }
 
-// // form:hover,
-// // label.mark:hover {
-// //   color: #66b1bb;
-// //   border-color: #66a3bb;
-// // }
+.light:hover {
+  color: $color-text-d-2;
+}
 
-// // label.mark:hover {
-// //   border: 2px solid;
-// //   border-color: #66a3bb !important;
-// // }
-// //
-// // .name-active {
-// //   color: #66a3bb;
-// // }
-
-// // /* styling for checkbox to make it round  ends */
+.dark:hover {
+  color: $color-text-l-2;
+}
