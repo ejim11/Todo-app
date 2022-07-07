@@ -1,5 +1,4 @@
 import TodoItem from "./TodoItem";
-
 import { useContext } from "react";
 import classes from "./TodoList.module.scss";
 import TodoContext from "../store/todo-context";

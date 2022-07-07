@@ -2,7 +2,6 @@ import classes from "./TodoItem.module.scss";
 import { useState, useContext, memo, Fragment } from "react";
 import { FaEdit } from "react-icons/fa";
 import { ImBin2 } from "react-icons/im";
-
 import TodoContext from "../store/todo-context";
 import EditTodo from "./EditTodo";
 
@@ -26,7 +25,6 @@ const TodoItem = (props) => {
   const editTodoHandler = () => {
     setShowEditInput((prevState) => !prevState);
   };
-  
 
   return (
     <Fragment>
